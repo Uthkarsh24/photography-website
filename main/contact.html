@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            padding: 10px 15px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background: #555;
+        }
+
+        .feedback-container {
+            margin-top: 20px;
+        }
+
+        .feedback-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .edit-buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .edit-buttons button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Feedback</label>
+                <textarea id="feedback" name="feedback" placeholder="Your Feedback" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" id="submitFeedback">Submit</button>
+            </div>
+        </form>
+        <div class="feedback-container" id="feedbackContainer">
+            <h3>Feedback</h3>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('contactForm');
+        const feedbackContainer = document.getElementById('feedbackContainer');
+
+        document.getElementById('submitFeedback').addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const feedback = document.getElementById('feedback').value.trim();
+
+            if (name && feedback) {
+                const feedbackItem = document.createElement('div');
+                feedbackItem.className = 'feedback-item';
+
+                feedbackItem.innerHTML = `
+                    <p><strong>Name:</strong> <span class="name-text">${name}</span></p>
+                    <p><strong>Feedback:</strong> <span class="feedback-text">${feedback}</span></p>
+                    <div class="edit-buttons">
+                        <button type="button" class="edit-btn">Edit</button>
+                        <button type="button" class="delete-btn">Delete</button>
+                    </div>
+                `;
+
+                feedbackContainer.appendChild(feedbackItem);
+
+                // Clear form fields
+                form.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        feedbackContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('edit-btn')) {
+                const feedbackItem = e.target.closest('.feedback-item');
+                const nameText = feedbackItem.querySelector('.name-text');
+                const feedbackText = feedbackItem.querySelector('.feedback-text');
+
+                // Make fields editable
+                const newName = prompt('Edit Name:', nameText.textContent);
+                if (newName !== null) nameText.textContent = newName;
+
+                const newFeedback = prompt('Edit Feedback:', feedbackText.textContent);
+                if (newFeedback !== null) feedbackText.textContent = newFeedback;
+            }
+
+            if (e.target.classList.contains('delete-btn')) {
+                const feedbackItem = e.target.closest('.feedback-item');
+                feedbackItem.remove();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - AVISHOOTS Photography</title>
+    <style>
+        .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AVISHOOTS</h1>
+            <nav>
+                <a href="index.html#home">Home</a>
+                <a href="gallery.html">Gallery</a>
+            </nav>
+        </div>
+    </header>
+    <section id="gallery">
+        <h2>Gallery</h2>
+
+        <!-- Wedding Photos -->
+        <h3>Wedding shoot</h3>
+        <div class="gallery">
+            <img src="wedding1.jpg" alt="Wedding Photo 1">
+            <img src="wedding2.jpg" alt="Wedding Photo 2">
+            <img src="wedding3.jpg" alt="Wedding Photo 3">
+        </div>
+
+        <!-- Baby Photos -->
+        <h3>Baby shoot</h3>
+        <div class="gallery">
+            <img src="baby1.jpg" alt="Baby Photo 1">
+            <img src="baby2.jpg" alt="Baby Photo 2">
+            <img src="baby3.jpg" alt="Baby Photo 3">
+        </div>
+
+        <!-- Pre-Wedding Photos -->
+        <h3>Pre-Wedding Shoot</h3>
+        <div class="gallery">
+            <img src="prewedding1.jpg" alt="Pre-Wedding Photo 1">
+            <img src="prewedding2.jpg" alt="Pre-Wedding Photo 2">
+            <img src="prewedding3.jpg" alt="Pre-Wedding Photo 3">
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="pink2.jpg" alt="Photo 1"> 
+            <img src="pink7.jpg" alt="Photo 6">
+            <img src="pink9.jpg" alt="photo 9">
+            <img src="pink5.jpg" alt="Photo 4">
+            <img src="pink6.jpg" alt="Photo 5">
+            <img src="pinku1.jpg" alt="photo 7">
+        </div>
+    </section> 
+
+    <footer>
+        <p>© 2024 AVISHOOTS | Designed with 💖</p>
+    </footer>
+</body>
+</html>

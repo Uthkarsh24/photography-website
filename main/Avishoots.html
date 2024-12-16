@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVISHOOTS Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1e2ee;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ffa500;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AVISHOOTS</h1>
+    </header>
+    <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="gallery" class="gallery">
+        <img src="https://via.placeholder.com/400x300" alt="Sample Photo 1">
+        <img src="https://via.placeholder.com/400x300" alt="Sample Photo 2">
+        <img src="https://via.placeholder.com/400x300" alt="Sample Photo 3">
+        <img src="https://via.placeholder.com/400x300" alt="Sample Photo 4">
+    </section>
+    <section id="about" style="padding: 20px; text-align: center;">
+        <h2>About Me</h2>
+        <p>Welcome to AVISHOOTS A blend of creativity, professionalism, and attention to detail, my goal is to ensure every session feels effortless and delivers exceptional results.
+
+Let’s create something unforgettable together!</p>
+    </section>
+    <section id="contact" style="padding: 20px; text-align: center;">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:Uthkarsh@24gmail.com">Uthkars@24gmail.com</a></p>
+    </section>
+    <footer>
+        <p>© 2024 AVISHOOTS | Designed with 💖</p>
+    </footer>
+</body>
+</html>
